@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char sentence[100];
+    char copiedsentence[100];
+    char ch;
+  
+    printf(" enter the sentence");
+    scanf(" %[^\n]",sentence);
+    printf("enter a character to search");
+    scanf(" %c",&ch);
+    char *ptr=strchr(sentence,ch);
+    if(ptr!=NULL){
+        int position=(ptr-sentence)+1;
+        printf("character  found at position %d\n",position);
+    }
+    else{
+        printf("character  is not found");
+    }
+    strcpy(copiedsentence,sentence);
+    printf("copiedsentence %s\n",copiedsentence);
+}
