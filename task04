@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char names[5][50];
+    char firststudent[50];
+    char ch;
+    for(int i=0;i<5;i++){
+        printf("enter the name of student %d",i+1);
+        scanf(" %[^\n]",names[i]);
+    }
+    printf("students names and the length of the names");
+    for(int i=0;i<5;i++){
+        printf("student %d %s length %zu\n",i+1,names[i],strlen(names[i]));
+    }
+    strcpy(firststudent,names[0]);
+    printf("copied first student name %s",firststudent);
+    printf("enter a char to search");
+    scanf(" %c",&ch);
+     for(int i=0;i<5;i++){
+        if(strchr(names[i],ch)!=NULL){
+            printf("char %c found in %s\n",ch,names[i]);
+        }
+        else{
+            printf("char %c is not found in %s",ch,names[i]);
+        }
+
+     }
+    }
+    
+
+    
+ 
