@@ -5,6 +5,7 @@ int main(){
     char modifiedname[50];
     printf("ener the students full name");
     scanf("%[^\n]",name);
+    printf("length %zu\n",strlen(name));
     strcpy(modifiedname,name);
     strcat(modifiedname,"FAST University");
     printf("original name: %s\n",name);
