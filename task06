@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main(){
+    FILE *fpr;
+    int customeraccount;
+    float amount;
+    printf("enter account no");
+    scanf("%d",&customeraccount);
+    printf("enter first transaction amount");
+    scanf("%f",&amount);
+    
+    
+    fpr=fopen("bank.txt","w");
+    if(fpr==NULL){
+        printf("file could not be opened");
+        return 1;
+    }
+    fprintf(fpr," %d %.2f",customeraccount,amount);
+    fclose(fpr);
+    printf("enter another transaction amount");
+    scanf("%f",&amount);
+    
+     fpr=fopen("bank.txt","a");
+      fprintf(fpr," %d %.2f",customeraccount,amount);
+    fclose(fpr);
+   fpr=fopen("bank.txt","r");
+      fscanf(fpr," %d %.2f",&customeraccount,&amount);
+      printf("\n first record first amount %d  %.2f",customeraccount,amount);
+      fscanf(fpr," %d %.2f",&customeraccount,&amount);
+      printf("\n  2nd recordvanother amount %d  %.2f",customeraccount,amount);
+    fclose(fpr);
+   
+
+
+}
