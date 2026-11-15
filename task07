@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+FILE *fpr;
+float obt,total;
+    fpr=fopen("student.txt","r+");
+    if(fpr==NULL){
+     printf("file could not be opened");
+        return 1;
+    }
+
+
+fscanf(fpr,"%f %f",&obt,&total);
+printf(" existing marks obtain %.2f total %.2f",obt,total);
+rewind(fpr);
+fprintf(fpr," %.2f %.2f",obt,total);
+fclose(fpr);
+fpr=fopen("student.txt","r");
+
+fscanf(fpr,"%f %f",&obt,&total);
+printf(" updating marks obtain %.2f total %.2f",obt,total);
+fclose(fpr);
+
+}
