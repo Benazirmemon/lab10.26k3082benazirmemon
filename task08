@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main(){
+FILE *fpr;
+int studentid;
+float obt,total,percentage;
+ fpr=fopen("result.txt","w+");
+    if(fpr==NULL){
+     printf("file could not be opened");
+        return 1;
+    }
+printf("enter the student id");
+    scanf("%d",&studentid);
+    printf("enter the obtain marks");
+    scanf("%f",&obt);
+    printf("enter the total marks");\
+    canf("%f",&total);
+    percentage=(obt/total)*100;
+    
+    fprintf(fpr,"%d %.2f %.2f %.2f",studentid,obt,total,percentage);
+    rewind(fpr);
+     fscanf(fpr,"%d %f %f %f",&studentid,&obt,&total,&percentage);
+     printf(" student id %d obtain %.2f total %.2f percentage %.2f",studentid,obt,total,percentage);
+     fclose(fpr);
+
+
+}
