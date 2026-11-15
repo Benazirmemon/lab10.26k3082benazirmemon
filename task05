@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(){
+    FILE *fpr;
+    char name[50];
+    float obt,total,per;
+
+    printf("enter name , obtain marks,total marks,");
+    scanf("%s %f %f %f ",name,&obt,&total);
+        per=(obt/total)*100;
+    fpr=fopen("student.txt","w");
+    if(fpr==NULL){
+        printf("file could not be opened");
+        return 1;
+    }
+    fprintf(fpr," %s %f %f %f",name,obt,total,per);
+    fclose(fpr);
+    fpr=fopen("student.txt","r");
+    fscanf(fpr,"%s %f %f %f",name,&obt,&total,&per);
+    fclose(fpr);
+    printf("\n name: %s obtained marks %.2f total %.2f percentage %.2f",name,obt,total,per);
+    
+
+
+}
